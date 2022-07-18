@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "Adobe Arabic";
+  font-family: "adobi";
   src: local("Adobe Arabic"),
   url(./fonts/AdobeArabic-Regular.woff) format("woff"),
   url(/fonts/AdobeArabic-Regular.ttf)  format('truetype'),
   url(/fonts/AdobeArabic-Regular.eot)  format('embedded-opentype'),
 }
 body,html{
-  font-family: "Adobe Arabic", serif !important;
+  font-family: "adobi", serif !important;
 }
 .ps-6{
   padding-left: 8rem !important ;
