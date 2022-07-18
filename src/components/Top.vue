@@ -1,25 +1,30 @@
 <template>
   <div class="container-fluid">
-    <div class="row top ps-6 pb-4 pt-6 align-items-center">
+    <div class="row top ps-6 pe-6 pb-4 pt-6 align-items-center">
       <div class="col-xxl-3 logo col-lg-4 col-12">
         <router-link to="/">
           <Logo />
         </router-link>
       </div>
-      <div class="col-xxl-9 menu col-lg-8 col-12">
-        <div class="d-flex">
-          <div v-for="item in menuItems" :key="item.id">
-            <router-link
-              :to="item.path"
-              custom
-              v-slot="{ href, route, navigate, isActive, isExactActive }"
-            >
-              <NavLink :active="isActive" :href="href" @click="navigate">
+      <div class="col-xxl-9 menu col-xl-8  col-12">
+        <div class="d-flex justify-content-between mt-0 mt-lg-3 mt-xl-0">
+          <div class="d-flex">
+            <div v-for="item in menuItems" :key="item.id">
+              <router-link
+                  :to="item.path"
+                  custom
+                  v-slot="{ href, route, navigate, isActive, isExactActive }"
+              >
+                <NavLink :active="isActive" :href="href" @click="navigate">
                 <span :class="[isActive && 'active']" class="menu-item">{{
-                  item.name
-                }}</span>
-              </NavLink>
-            </router-link>
+                    item.name
+                  }}</span>
+                </NavLink>
+              </router-link>
+            </div>
+          </div>
+          <div class="d-none d-lg-block">
+            <button class="signIn">Sign In</button>
           </div>
         </div>
       </div>
@@ -42,7 +47,7 @@
         </span>
       </div>
       <div v-if="!collapsed" class="d-flex flex-column mobile-menu">
-        <div v-for="item in menuItems" :key="item.id">
+        <div v-for="item in mobileMenuItems" :key="item.id">
           <router-link
             :to="item.path"
             custom
@@ -93,6 +98,23 @@ export default {
           name: "Contacts",
         },
       ],
+      mobileMenuItems: [
+        {
+          id: 1,
+          path: "/team",
+          name: "Team",
+        },
+        {
+          id: 2,
+          path: "/researches",
+          name: "Researches",
+        },
+        {
+          id: 4,
+          path: "/contacts",
+          name: "Contacts",
+        },
+      ],
     };
   },
   methods: {
@@ -105,15 +127,13 @@ export default {
 
 <style lang="scss" scoped>
 .top {
-  .menu .active {
+    .menu .active {
     background-color: #f5f5f5;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
+    border-top: 12px solid #E52620;
     position: relative;
-    padding-left: 15px !important;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-    padding-right: 20px;
+    padding: 2rem 20px 2rem 15px !important;
     justify-content: space-between;
     .collapseIcon {
       width: fit-content;
@@ -127,8 +147,9 @@ export default {
       height: 37px;
     }
     .mobile-menu {
+      z-index: 999;
       position: absolute;
-      bottom: -181%;
+      bottom: -135%;
       border: 1px solid #cecece;
       background-color: white;
       width: 85%;
@@ -139,19 +160,30 @@ export default {
       }
     }
   }
+  .signIn{
+    background-color: #E51E20;
+    padding: 0 30px;
+    color: white;
+    font-size: 30px;
+    border: unset !important;
+    white-space: nowrap;
+  }
 }
 .collapseIcon {
   display: none;
 }
 .menu {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     display: none !important;
   }
 
   .menu-item {
-    margin-right: 76px;
+    margin-right: 25px;
     font-size: 40px;
     cursor: pointer;
+    padding: 0 30px;
+    border-radius: 22px;
+    white-space: nowrap;
   }
 }
 

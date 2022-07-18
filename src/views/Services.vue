@@ -1,72 +1,72 @@
 <template>
-  <div class="services">
-    <div class="items">
+  <div class="services container">
+    <div v-if="isMobile">
+      <NotFound :isAccessDenied="true" />
+    </div>
+    <div v-else class="items">
       <div class="d-flex">
         <div class="row-section item">
-          <div>
-            <img :src="simpleMicrogenetics" alt="" />
+          <div class="header">
+            <img :src="simpleMicrogenetics" alt=""/>
             <span>DNA Read Mapping</span>
           </div>
-          <div>
+          <div class="description">
             <span
-              >Utilizing Burrows–Wheeler transform algorithm to construct suffix
+            >Utilizing Burrows–Wheeler transform algorithm to construct suffix
               tree</span
             >
           </div>
-          <div>
-            <span>Status </span>
-            <span>Available</span>
+          <div class="status-section">
+            <span class="title"> Status </span>
+            <span class="status"> Available </span>
           </div>
         </div>
         <div class="row-section item">
-          <div>
-            <img :src="simpleMicrogenetics" alt="" />
-            <span>DNA Read Mapping</span>
+          <div class="header">
+            <img :src="simpleMicrogenetics1" alt=""/>
+            <span>Protein Assembly</span>
           </div>
-          <div>
+          <div class="description">
             <span
-              >Utilizing Burrows–Wheeler transform algorithm to construct suffix
-              tree</span
+            >Using mass spectrometers raw data to construct the polypeptide sequence</span
             >
           </div>
-          <div>
-            <span>Status </span>
-            <span>Available</span>
+          <div class="status-section">
+            <span class="title"> Status </span>
+            <span class="status-red"> Unavailable </span>
           </div>
         </div>
         <div class="row-section item">
-          <div>
-            <img :src="simpleMicrogenetics" alt="" />
-            <span>DNA Read Mapping</span>
+          <div class="header">
+            <img :src="simpleMicrogenetics" alt=""/>
+            <span>DNA and RNA Translator</span>
           </div>
-          <div>
+          <div class="description">
             <span
-              >Utilizing Burrows–Wheeler transform algorithm to construct suffix
-              tree</span
+            >A simple algorithm to transcript DNA to RNA and translate it into Protein</span
             >
           </div>
-          <div>
-            <span>Status </span>
-            <span>Available</span>
+          <div class="status-section">
+            <span class="title"> Status </span>
+            <span class="status"> Available </span>
           </div>
         </div>
+
       </div>
-      <div class="col-section ">
-        <div>
-          <img :src="simpleMicrogenetics" alt="" />
-          <span>DNA Read Mapping</span>
+      <div class="col-section">
+        <div class="header">
+          <img :src="simpleMicrogenetics2" alt=""/>
+          <span>DNA and RNA Translator</span>
         </div>
-        <div>
-          <span
-            >A modified platform to analyze the microarray expression data from
-            GEO database in a modern and smart approach which can trim the
-            principal component analysis results as well as custom volcano plots
-            and lastly Enrich analyzes based on DEGs results. This package will
-            be online in mid 2023.</span>
+        <div class="description">
+            <span>A modified platform to analyze the microarray expression data from GEO database in a
+              modern and smart approach which can trim the principal component analysis results as well as custom volcano plots
+              and lastly Enrich analyzes based on DEGs results. This package will be online in mid 2023.</span
+            >
         </div>
-        <div>
-          <span>Status </span>
-          <span>Coming Soon</span>
+        <div class="status-section">
+          <span class="title"> Status </span>
+          <span class="status"> Available </span>
         </div>
       </div>
     </div>
@@ -76,23 +76,137 @@
 import simpleMicrogenetics from "@/assets/simpleMicrogenetics.svg";
 import simpleMicrogenetics1 from "@/assets/simpleMicrogenetics1.svg";
 import simpleMicrogenetics2 from "@/assets/simpleMicrogenetics2.svg";
+import NotFound from "./NotFound.vue"
 
 export default {
+  components: {NotFound},
+
   data() {
     return {
       simpleMicrogenetics,
       simpleMicrogenetics1,
       simpleMicrogenetics2,
+      isMobile:false,
     };
+
   },
+  mounted() {
+  this.mobileUser()
+    },
+  methods :{
+    mobileUser() {
+      this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+}
 };
 </script>
 <style lang="scss" scoped>
-.services{
-  .items{
-    .item{
+.container {
+  max-width: 1645px;
+}
+
+.services {
+  .items {
+    .d-flex {
+      gap: 16px;
+    }
+
+    .item {
+      .header {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 35px;
+        }
+      }
+
       background-color: #FAFAFA;
       padding: 30px 55px;
+      width: 536px;
+
+      span {
+        font-size: 41px;
+        line-height: 45px;
+      }
+
+      .description {
+        padding-top: 20px;
+
+        span {
+          font-size: 33px;
+          line-height: 36px;
+          color: #696969;
+          margin-top: 20px;
+        }
+      }
+
+      .status-section {
+        padding-top: 40px;
+
+        .title {
+          color: #696969;
+          font-size: 33px;
+        }
+
+        .status {
+          color: #13A80D;
+          font-size: 33px;
+        }
+
+        .status-red {
+          color: #A80D0D;
+          font-size: 33px;
+        }
+      }
+    }
+
+    .col-section {
+      margin-top: 21px;
+      background-color: #FAFAFA;
+      padding: 30px 55px;
+      margin-bottom: 170px;
+      .header{
+        display: flex;
+        align-items: center;
+
+        img{
+          width: 72px;
+          height: 72px;
+        }
+        span{
+          font-size: 41px;
+          line-height: 45px;
+          margin-left: 35px;
+        }
+      }
+      .description {
+        padding-top: 20px;
+        span {
+          font-size: 33px;
+          line-height: 36px;
+          color: #696969;
+          margin-top: 20px;
+        }
+      }
+      .status-section {
+        padding-top: 40px;
+
+        .title {
+          color: #696969;
+          font-size: 33px;
+        }
+
+        .status {
+          color: #13A80D;
+          font-size: 33px;
+        }
+
+        .status-red {
+          color: #A80D0D;
+          font-size: 33px;
+        }
+      }
     }
   }
 }
