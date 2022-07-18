@@ -1,8 +1,8 @@
 <template>
   <div class="services">
     <div class="items">
-      <div>
-        <div class="row-section">
+      <div class="d-flex">
+        <div class="row-section item">
           <div>
             <img :src="simpleMicrogenetics" alt="" />
             <span>DNA Read Mapping</span>
@@ -18,7 +18,7 @@
             <span>Available</span>
           </div>
         </div>
-        <div class="row-section">
+        <div class="row-section item">
           <div>
             <img :src="simpleMicrogenetics" alt="" />
             <span>DNA Read Mapping</span>
@@ -34,7 +34,7 @@
             <span>Available</span>
           </div>
         </div>
-        <div class="row-section">
+        <div class="row-section item">
           <div>
             <img :src="simpleMicrogenetics" alt="" />
             <span>DNA Read Mapping</span>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div class="col-section">
+      <div class="col-section ">
         <div>
           <img :src="simpleMicrogenetics" alt="" />
           <span>DNA Read Mapping</span>
@@ -87,3 +87,13 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.services{
+  .items{
+    .item{
+      background-color: #FAFAFA;
+      padding: 30px 55px;
+    }
+  }
+}
+</style>
