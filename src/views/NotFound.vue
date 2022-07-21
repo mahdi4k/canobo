@@ -8,6 +8,7 @@
       Tools and Services
       section  </p>
     <p v-else> We are sorry, something </p>
+    <p v-if="!isAccessDenied">goes wrong :(</p>
     <router-link to="/">
     <button>Back to homepage</button>
     </router-link>
@@ -41,12 +42,20 @@ export default {
 
   .title {
     font-size: 67px;
+     @media (max-width:600px){
+          font-size: 48px;
+     }
   }
 
   p {
     font-size: 47px;
     color: #868686;
     line-height: 50px;
+    @media (max-width:600px){
+      font-size: 34px;
+      color: #868686;
+      line-height: 36px;
+    }
   }
 
   button {
@@ -57,6 +66,14 @@ export default {
     max-width: 500px;
     border: unset;
     margin-top: 52px;
+    @media (max-width:600px){
+      max-width: unset;
+      width: 100%;
+      font-size: 26px;
+    }
+  }
+  @media (max-width:600px){
+    padding: 30px 40px 120px 40px;
   }
 }
 </style>

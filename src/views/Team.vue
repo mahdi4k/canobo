@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container team-section">
     <span class="mobile-title d-none">
         Canobo Team
       </span>
@@ -98,11 +98,13 @@ export default {
     margin-top: 0;
   }
 }
-
+.team-section{
+  padding-bottom: 100px;
+}
 .mobile-title {
   @media (max-width: 950px) {
     display: block !important;
-    padding: 37px 60px;
+    padding: 37px 46px;
     font-size: 46px;
     &:after {
       content: "";
@@ -110,7 +112,6 @@ export default {
       display: flex;
       width: 25%;
       position: absolute;
-      left: 12%;
       margin-top: -5px;
     }
   }

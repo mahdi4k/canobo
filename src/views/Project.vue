@@ -13,8 +13,14 @@
           <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
                   type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Scripts
           </button>
-          <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
-                  type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings
+          <button disabled class="nav-link disabled" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+                  type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Additional Files
+          </button>
+          <button disabled class="nav-link disabled" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+                  type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Lab Pages
+          </button>
+          <button disabled class="nav-link disabled" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+                  type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">System Logs
           </button>
         </div>
         <div class="tab-content w-75" id="v-pills-tabContent">
@@ -166,7 +172,8 @@
                 expression in study by the Nazor et al. was measured using microarrays, whereas the signature was
                 trained using RNA-seq data.
               </p></div>
-              <div class="code-section">
+              <pre>
+              <code class="code-section">
                 #!/bin/bash
 
                 FASTQ=$2
@@ -199,10 +206,12 @@
                 /data/illumina_data2/WWW/miRExpress/miRBase20/hsa_miRNA.txt -d ./ -o align.txt
                 -t expr.txt
                 EOF
-              </div>
+              </code>
+              </pre>
             </div>
           </div>
           <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <pre>
             <div class="code-section">
               #!use/bin/r
 
@@ -434,6 +443,7 @@
               ################################################################################
               ################################################################################
             </div>
+            </pre>
           </div>
           <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...
           </div>
@@ -479,6 +489,9 @@ export default {
       &.active {
         background-color: white;
         border-radius: 20px;
+      }
+      &.disabled{
+        color: #BFBFBF;
       }
     }
   }

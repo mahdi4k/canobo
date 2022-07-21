@@ -18,7 +18,7 @@
           </div>
           <div class="status-section">
             <span class="title"> Status </span>
-            <span class="status"> Available </span>
+            <span class="status"> Coming soon </span>
           </div>
         </div>
         <div class="row-section item">
@@ -33,7 +33,7 @@
           </div>
           <div class="status-section">
             <span class="title"> Status </span>
-            <span class="status-red"> Unavailable </span>
+            <span class="status-red"> Coming soon </span>
           </div>
         </div>
         <div class="row-section item">
@@ -48,7 +48,7 @@
           </div>
           <div class="status-section">
             <span class="title"> Status </span>
-            <span class="status"> Available </span>
+            <span class="status"> Coming soon </span>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
         </div>
         <div class="status-section">
           <span class="title"> Status </span>
-          <span class="status"> Available </span>
+          <span class="status"> Coming soon </span>
         </div>
       </div>
     </div>
@@ -150,12 +150,12 @@ export default {
         }
 
         .status {
-          color: #13A80D;
+          color: #0DA8A8;
           font-size: 33px;
         }
 
         .status-red {
-          color: #A80D0D;
+          color: #0DA8A8;
           font-size: 33px;
         }
       }
@@ -198,7 +198,7 @@ export default {
         }
 
         .status {
-          color: #13A80D;
+          color: #0DA8A8;
           font-size: 33px;
         }
 

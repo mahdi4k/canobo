@@ -47,7 +47,7 @@
         </span>
       </div>
       <div v-if="!collapsed" class="d-flex flex-column mobile-menu">
-        <div v-for="item in mobileMenuItems" :key="item.id">
+        <div @click="collapseIcon" v-for="item in mobileMenuItems" :key="item.id">
           <router-link
             :to="item.path"
             custom
@@ -179,7 +179,7 @@ export default {
 
   .menu-item {
     margin-right: 25px;
-    font-size: 40px;
+    font-size: 35px;
     cursor: pointer;
     padding: 0 30px;
     border-radius: 22px;

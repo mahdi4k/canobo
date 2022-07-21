@@ -44,7 +44,7 @@
         </div>
         <div class="title">Study Design</div>
         <div class="d-flex flex-column flex-xxl-row">
-          <div class="description">
+          <div class="description col">
             In this study we utlized Data for lncRNA and mRNA microchip array extracted from peripheral blood
             mononuclear cells of SCLC patients were downloaded through Gene Expression Omnibus (GEO) 59. The data was
             designed as brain metastasis (BM) patients compared to non-BM patients for lncRNAs in relation to BM in LC

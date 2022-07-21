@@ -7,15 +7,25 @@
         </div>
         <div class="col-xl-3">
           <div class="sections justify-content-xl-center justify-content-start d-grid">
-            <span>Team</span>
+            <router-link to="/team">
+             <span>Team</span>
+            </router-link>
+            <router-link to="/researches">
             <span>Research</span>
+            </router-link>
+            <router-link to="/services-and-tools">
             <span>Services and Tools</span>
+            </router-link>
           </div>
         </div>
         <div class="col-xl-3">
           <div class="privacy ps-5 ps-xl-0 justify-content-xl-center justify-content-start d-grid">
+            <router-link to="/contacts">
             <span>Privacy Policy</span>
+            </router-link>
+            <router-link to="/contacts">
             <span>Contact us</span>
+            </router-link>
           </div>
         </div>
         <div class="col-xl-3">
@@ -57,6 +67,10 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  a{
+    text-decoration: unset !important;
+    color: unset !important;
+  }
   position: relative;
   background-color: black;
   padding-top: 55px;

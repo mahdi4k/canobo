@@ -50,7 +50,7 @@
     </div>
 
     <div class="solo-video">
-      <video autoplay muted>
+      <video autoplay muted loop>
         <source :src="video" type="video/mp4">
         <source :src="video" type="video/ogg">
         Your browser does not support the video tag.
@@ -60,60 +60,58 @@
     <div class="ourDream">
       <div class="header">
         <span>Our Dream</span>
-        <h2>Analyze and Sort Your data efficiently for your research</h2>
-        <p>We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give researchers
-          easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every
-          researchers to analyse their projects free and accessible. </p>
+        <h2>We dream of a universal tool of investigation that makes studies more efficient and more manageable.</h2>
+        <p>Our ultimate goal is to provide a manageable tool for researchers all around the globe to communicate and collaborate. By services and tools that we provided in this platform, they can easily analyze their research in a cloud base environment and has a Git portal for their Scripts. All the results will be uploaded automatically and they can communicate while writing manuscripts for their projects.
+ </p>
         <p>
-          We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give researchers
-          easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every
-          researchers to analyse their projects free and accessible.
+          We dream of a world where leaders look to scientific advisors before corporate donors. Where federal budgets for scientific research dwarf those for military expenditures.
+
         </p>
       </div>
     </div>
 
     <div class="article-section d-lg-flex d-none flex-column flex-xl-row">
       <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
-        <div class="img"></div>
+        <div class="img">
+          <img :src="news2" alt="">
+        </div>
         <div class="title">
-          <h2>Title</h2>
-          <span class="date">2020.05.19</span>
+          <h2>Cell-sex specific proteins</h2>
+          <span class="date">2022.07.20</span>
         </div>
         <div class="description">
           <p>
-            We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give
-            researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space
-            for every researchers to analyse their projects free and accessible.
+            Could the proteins essential to sex-cell fusion predate... sex? Read the latest research by cdessimoz’ lab unil & international colleagues, published in NatureComms, initially spotted as a preprint in the SIBRemarkableOutput 2021! 
           </p>
         </div>
         <div class="underline"></div>
       </div>
       <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
-        <div class="img"></div>
+        <div class="img">
+          <img :src="news1" alt="">
+        </div>
         <div class="title">
-          <h2>Title</h2>
-          <span class="date">2020.05.19</span>
+          <h2>7000 new ORFs! </h2>
+          <span class="date">2022.07.20</span>
         </div>
         <div class="description">
           <p>
-            We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give
-            researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space
-            for every researchers to analyse their projects free and accessible.
+            Despite years of research, there is still uncharted territory in the human genome that remains to be explored. New work identifies over 7,000 ORFs to add to all the major human genome databases.
           </p>
         </div>
         <div class="underline"></div>
       </div>
       <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
-        <div class="img"></div>
+        <div class="img">
+          <img :src="news3" alt="">
+        </div>
         <div class="title">
-          <h2>Title</h2>
-          <span class="date">2020.05.19</span>
+          <h2>Non-coding RNAs as efficient biomarkers in cancer </h2>
+          <span class="date">2022.07.20</span>
         </div>
         <div class="description">
           <p>
-            We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give
-            researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space
-            for every researchers to analyse their projects free and accessible.
+            Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, the discovery that their expression levels are commonly dysregulated in various malignancies has sparked interest in utilizing their therapeutic potential as cancer biomarkers. With the advent of high-throughput sequencing technology, detailed molecular analysis of diverse non-coding RNA expression patterns in various malignancies has been possible. 
           </p>
         </div>
         <div class="underline"></div>
@@ -122,9 +120,11 @@
 
     <div id="carouselExampleIndicators" class="carousel mobile-slider d-block d-lg-none slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div v-for="(item,i) in articleSlider" data-bs-interval="90000" class="carousel-item" :class="i === 0 ? 'active':''">
+        <div v-for="(item,i) in articleSlider" data-bs-interval="90000" :key="i" class="carousel-item" :class="i === 0 ? 'active':''">
           <div class="col-12 article-section" >
-            <div class="img"></div>
+            <div class="img">
+              <img :src="item.image" alt="">
+            </div>
             <div class="title">
               <h2>{{ item.title }}</h2>
               <span class="date">{{ item.date }}</span>
@@ -149,31 +149,40 @@
 </template>
 <script>
 import rightImage from "@/assets/nationalCancer.jpg";
+import news1 from "@/assets/news1.jpg";
+import news2 from "@/assets/news2.jpeg";
+import news3 from "@/assets/news3.jpeg";
 import video from "@/assets/file.mp4";
 
 export default {
   data() {
     return {
       rightImage,
+      news1,
+      news2,
+      news3,
       touchstartX:0,
       touchendX :0,
       detectMove:null,
       video,
       articleSlider: [
         {
-          title: 'Title',
-          date: '2020.05.19',
-          description: "We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every researchers to analyse their projects free and accessible."
+          image:news2,
+          title: 'Cell-sex specific proteins:',
+          date: '2022.07.20',
+          description: "Could the proteins essential to sex-cell fusion predate... sex? Read the latest research by cdessimoz’ lab unil & international colleagues, published in NatureComms, initially spotted as a preprint in the SIBRemarkableOutput 2021! "
         },
         {
-          title: 'Title',
-          date: '2020.05.19',
-          description: "We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every researchers to analyse their projects free and accessible."
+          image:news1,
+          title: '7000 new ORFs! ',
+          date: '2022.07.20',
+          description: "Despite years of research, there is still uncharted territory in the human genome that remains to be explored. New work identifies over 7,000 ORFs to add to all the major human genome databases."
         },
         {
-          title: 'Title',
-          date: '2020.05.19',
-          description: "We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give researchers easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every researchers to analyse their projects free and accessible."
+          image:news3,
+          title: 'Non-coding RNAs as efficient biomarkers in cancer ',
+          date: '2022.07.20',
+          description: "Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, the discovery that their expression levels are commonly dysregulated in various malignancies has sparked interest in utilizing their therapeutic potential as cancer biomarkers. With the advent of high-throughput sequencing technology, detailed molecular analysis of diverse non-coding RNA expression patterns in various malignancies has been possible."
         }
       ]
     }
@@ -207,18 +216,18 @@ export default {
 
   .about {
     color: #E52620;
-    font-size: 35px;
+    font-size: 30px;
   }
 
   h2 {
-    font-size: 75px;
-    line-height: 66px;
+    font-size: 65px;
+    line-height: 56px;
     color: black;
   }
 
   p {
-    font-size: 40px;
-    line-height: 37px;
+    font-size: 35px;
+    line-height: 30px;
     color: #6A6A6A;
   }
 
@@ -265,7 +274,7 @@ export default {
   .text-svg {
     z-index: 1000;
     color: white;
-    font-size: 66px;
+    font-size: 60px;
     display: flex;
     flex-direction: column;
     line-height: 78px;
@@ -292,6 +301,10 @@ export default {
   padding-bottom: 91px;
   display: flex;
   justify-content: center;
+  video{
+    width: 60%;
+    height: auto;
+  }
   @media screen and (max-width: 1300px) {
     video {
       width: 100%;
@@ -358,9 +371,10 @@ export default {
   padding: 95px 140px 140px;
 
   .img {
-    width: auto;
+   img{
+     width: 100%;
     height: 289px;
-    border: 1px solid #707070;
+   }
   }
 
   .title {
@@ -371,7 +385,7 @@ export default {
     margin-top: 20px;
 
     h2 {
-      font-size: 55px;
+      font-size: 45px;
       margin-bottom: 0;
 
     }
@@ -417,8 +431,10 @@ export default {
       padding-right: 35px;
       padding-top: 38px;
       .img {
-        height: 190px;
-        width: 100%;
+        img{
+          height: 190px;
+          width: 100%;
+        }
       }
 
       .title {
