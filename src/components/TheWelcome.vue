@@ -254,11 +254,11 @@ export default {
   width: 100%;
   height: 1110px;
   background-color: black;
-  background-image: url("./assets/dots2.svg");
+  background-image: url("/assets/dots2.svg");
   transition: opacity 2s ease;
 
   .svgSection2 {
-    background-image: url("./assets/dots.svg");
+    background-image: url("/assets/dots.svg");
     transition: all 2s ease;
     width: 100%;
     height: 1110px;
