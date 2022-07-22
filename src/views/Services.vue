@@ -1,5 +1,5 @@
 <template>
-  <div class="services container">
+  <div class="services">
     <div v-if="isMobile">
       <NotFound :isAccessDenied="true" />
     </div>
@@ -106,6 +106,10 @@ export default {
 }
 
 .services {
+  @media (min-width: 1000px) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
   padding-top: 80px;
   .items {
     .d-flex {

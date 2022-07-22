@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import footerImage from "@/assets/footer.svg";
+import footerImage from "@/assets/footer.png";
 import Telegram from "./icons/telegram.svg";
 import Twitter from "./icons/twitter.svg";
 

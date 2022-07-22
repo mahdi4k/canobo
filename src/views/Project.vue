@@ -1,7 +1,7 @@
 <template>
-  <div class="container project">
+  <div class="project">
     <div>
-      <div class="top-mobile px-4 d-lg-none">
+      <div class="top-mobile pt-4 px-4 d-lg-none">
         <span class="small fst-italic">Project</span>
         <div class="title-project">
           Machine Learning Identifies Stemness Features Associated with Oncogenic Dedifferentiation
@@ -461,14 +461,44 @@
 </template>
 
 <script>
+import code from "@/assets/carbon.png";
+
 export default {
-  name: "Project"
+  data(){
+    return{
+      code
+    }
+  },
+  name: "Project",
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      let tab = document.querySelector(".nav-pills");
+      let windowSize = window.innerWidth
+      if (window.scrollY > 200 && windowSize > 600) {
+        tab.classList.add('position-fix');
+      }else {
+        tab.classList.remove('position-fix');
+
+      }
+    },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
-  max-width: 1650px;
+pre{
+  background: #F7F6F3;
+  font-size: .975em;
+}
+.position-fix{
+  position: fixed;
 }
 @media (max-width: 1000px) {
   .top-mobile{
@@ -493,10 +523,20 @@ export default {
   }
 }
 .project {
+  @media (min-width: 1000px) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  .tab-section{
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
   .tab-content{
     width: 75%;
+    margin-left: auto;
   }
   .nav-pills {
+    top: 5%;
     .title {
       font-size: 39px;
       line-height: 42px;
@@ -506,12 +546,12 @@ export default {
     }
 
     background-color: #EFEFEF;
-    width: 398px;
+    width: 350px;
     padding: 20px;
 
     .nav-link {
       color: black;
-      font-size: 39px;
+      font-size: 35px;
       line-height: 42px;
       padding-left: 30px;
       text-align: left;
@@ -531,6 +571,7 @@ export default {
     padding-top: 10px;
     padding-left: 70px;
     padding-bottom: 100px;
+    margin-left: auto;
 
     .small {
       font-size: 28px;

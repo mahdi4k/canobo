@@ -124,6 +124,7 @@ export default {
     margin-bottom: 50px;
     background-color: #F8F8F8;
     padding: 30px 28px 40px 30px;
+    border: 1px solid #DDDDDD;
 
     .header {
       .image {
