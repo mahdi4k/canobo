@@ -1,9 +1,16 @@
 <template>
   <div class="container project">
     <div>
-      <div class="d-flex align-items-start">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <span class="title">Sections</span>
+      <div class="top-mobile px-4 d-lg-none">
+        <span class="small fst-italic">Project</span>
+        <div class="title-project">
+          Machine Learning Identifies Stemness Features Associated with Oncogenic Dedifferentiation
+        </div>
+        <div class="author">Arsham Mikaeili Namini</div>
+      </div>
+      <div class="d-flex flex-column tab-section flex-lg-row align-items-start">
+        <div class="nav flex-row flex-lg-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <span class="title d-none d-lg-block">Sections</span>
           <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
                   type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Study Design
           </button>
@@ -23,14 +30,14 @@
                   type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">System Logs
           </button>
         </div>
-        <div class="tab-content w-75" id="v-pills-tabContent">
+        <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <div class="content">
-              <span class="small fst-italic">Project</span>
-              <div class="title-project">
+              <span class="small d-none d-lg-block fst-italic">Project</span>
+              <div class="title-project d-none d-lg-block">
                 Machine Learning Identifies Stemness Features Associated with Oncogenic Dedifferentiation
               </div>
-              <div class="author">Arsham Mikaeili Namini</div>
+              <div class="author d-none d-lg-block">Arsham Mikaeili Namini</div>
               <div class="description"><p>
                 Cancer progression involves the gradual loss of a differentiated phenotype and acquisition of progenitor
                 and stem-cell-like features. Here, we provide novel stemness indices for assessing the degree of
@@ -463,8 +470,32 @@ export default {
 .container {
   max-width: 1650px;
 }
+@media (max-width: 1000px) {
+  .top-mobile{
+    .small {
+      font-size: 28px;
+      line-height: 31px;
+      color: #BEBEBE;
+      margin-top: 10px;
+    }
 
+    .title-project {
+      font-size: 32px;
+      line-height: 35px;
+      font-weight: 700;
+    }
+    .author{
+      font-size: 23px;
+      line-height: 25px;
+      padding-top: 15px;
+      padding-bottom: 30px;
+    }
+  }
+}
 .project {
+  .tab-content{
+    width: 75%;
+  }
   .nav-pills {
     .title {
       font-size: 39px;
@@ -523,6 +554,51 @@ export default {
       font-size: 30px;
       line-height: 36px;
       padding-bottom: 45px;
+    }
+  }
+  @media (max-width: 1000px) {
+    &.container{
+      padding: 0;
+    }
+    .tab-content{
+      width: 100%;
+    }
+    .tab-section{
+      .nav-pills {
+        background-color: #ffffff;
+        width: 100%;
+        padding: 15px 20px 0 20px;
+        border: 1px solid #D5D5D5;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+        .nav-link{
+          font-size: 23px;
+          line-height: 25px;
+          padding-left: 0;
+          text-align: left;
+          margin-bottom: 0;
+          margin-right: 40px;
+          padding-right: 0;
+          padding-bottom: 3px;
+          &.active {
+            font-weight: 700;
+            border-bottom: 2px solid;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    .content{
+      padding-left: 35px;
+      padding-right: 30px;
+      .description{
+        font-size: 25px;
+        line-height: 32px;
+      }
     }
   }
 }

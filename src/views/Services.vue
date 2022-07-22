@@ -106,6 +106,7 @@ export default {
 }
 
 .services {
+  padding-top: 80px;
   .items {
     .d-flex {
       gap: 16px;

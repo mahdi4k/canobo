@@ -106,24 +106,24 @@
           <img :src="news3" alt="">
         </div>
         <div class="title">
-          <h2>Non-coding RNAs as efficient biomarkers in cancer </h2>
+          <h2>ncRNAs as biomarkers in cancer</h2>
           <span class="date">2022.07.20</span>
         </div>
         <div class="description">
           <p>
-            Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, the discovery that their expression levels are commonly dysregulated in various malignancies has sparked interest in utilizing their therapeutic potential as cancer biomarkers. With the advent of high-throughput sequencing technology, detailed molecular analysis of diverse non-coding RNA expression patterns in various malignancies has been possible. 
+            Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, discovering that their expression levels are commonly dysregulated in various malignancies has sparked an interest.
           </p>
         </div>
         <div class="underline"></div>
       </div>
     </div>
 
-    <div id="carouselExampleIndicators" class="carousel mobile-slider d-block d-lg-none slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel mobile-slider mt-5 mt-lg-0 d-block d-lg-none slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div v-for="(item,i) in articleSlider" data-bs-interval="90000" :key="i" class="carousel-item" :class="i === 0 ? 'active':''">
-          <div class="col-12 article-section" >
+          <div class="col-12 px-2 px-lg-0 article-section" >
             <div class="img">
-              <img :src="item.image" alt="">
+              <img class="px-2 px-lg-0" :src="item.image" alt="">
             </div>
             <div class="title">
               <h2>{{ item.title }}</h2>
@@ -180,9 +180,9 @@ export default {
         },
         {
           image:news3,
-          title: 'Non-coding RNAs as efficient biomarkers in cancer ',
+          title: 'ncRNAs as biomarkers in cancer ',
           date: '2022.07.20',
-          description: "Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, the discovery that their expression levels are commonly dysregulated in various malignancies has sparked interest in utilizing their therapeutic potential as cancer biomarkers. With the advent of high-throughput sequencing technology, detailed molecular analysis of diverse non-coding RNA expression patterns in various malignancies has been possible."
+          description: "Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, discovering that their expression levels are commonly dysregulated in various malignancies has sparked an interest."
         }
       ]
     }
@@ -227,7 +227,7 @@ export default {
 
   p {
     font-size: 35px;
-    line-height: 30px;
+    line-height: 35px;
     color: #6A6A6A;
   }
 
@@ -254,11 +254,11 @@ export default {
   width: 100%;
   height: 1110px;
   background-color: black;
-  background-image: url("./src/assets/dots2.svg");
+  background-image: url("./assets/dots2.svg");
   transition: opacity 2s ease;
 
   .svgSection2 {
-    background-image: url("./src/assets/dots.svg");
+    background-image: url("./assets/dots.svg");
     transition: all 2s ease;
     width: 100%;
     height: 1110px;
@@ -368,9 +368,12 @@ export default {
 }
 
 .article-section {
-  padding: 95px 140px 140px;
+  margin-top: 90px;
+  padding: 0 140px 140px;
 
   .img {
+    width: 100%;
+    height: 289px;
    img{
      width: 100%;
     height: 289px;
@@ -385,23 +388,23 @@ export default {
     margin-top: 20px;
 
     h2 {
-      font-size: 45px;
+      font-size: 37px;
       margin-bottom: 0;
 
     }
 
     .date {
-      font-size: 30px;
+      font-size: 25px;
       color: #3B3B3B;
-      padding-right: 40px;
+      padding-right: 10px;
     }
   }
 
   .description {
     p {
       padding-top: 35px;
-      font-size: 36px;
-      line-height: 37px;
+      font-size: 30px;
+      line-height: 35px;
       color: #6A6A6A;
 
       &:after {
@@ -427,10 +430,11 @@ export default {
     display: flex;
     flex-direction: column;
     @media screen and (max-width: 600px) {
-      padding-left: 35px;
-      padding-right: 35px;
-      padding-top: 38px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
       .img {
+        height: 190px;
         img{
           height: 190px;
           width: 100%;
@@ -440,21 +444,21 @@ export default {
       .title {
         width: 100%;
         h2 {
-          font-size: 36px;
+          font-size: 31px;
           margin-bottom: 0;
         }
 
         .date {
           font-size: 19px;
           color: #3B3B3B;
-          padding-right: 30px;
+          padding-right: 0px;
         }
       }
 
       .description {
         p {
           padding-top: 35px;
-          font-size: 23px;
+          font-size: 21px;
           line-height: 28px;
           text-align: left;
           color: #6A6A6A;
