@@ -461,8 +461,6 @@
 </template>
 
 <script>
-import code from "@/assets/carbon.png";
-
 export default {
   data(){
     return{
