@@ -122,24 +122,27 @@ export default {
         align-items: center;
 
         span {
-          margin-left: 35px;
+          margin-left: 25px;
         }
       }
 
       background-color: #FAFAFA;
-      padding: 30px 55px;
+      padding: 30px 45px;
       width: 536px;
 
       span {
-        font-size: 41px;
+        font-size: 35px;
         line-height: 45px;
+      }
+      img{
+        width: 60px;
       }
 
       .description {
         padding-top: 20px;
 
         span {
-          font-size: 33px;
+          font-size: 30px;
           line-height: 36px;
           color: #696969;
           margin-top: 20px;
@@ -169,26 +172,26 @@ export default {
     .col-section {
       margin-top: 21px;
       background-color: #FAFAFA;
-      padding: 30px 55px;
+      padding: 30px 45px;
       margin-bottom: 170px;
       .header{
         display: flex;
         align-items: center;
 
         img{
-          width: 72px;
-          height: 72px;
+          width: 60px;
+          height: 60px;
         }
         span{
-          font-size: 41px;
+          font-size: 35px;
           line-height: 45px;
-          margin-left: 35px;
+          margin-left: 25px;
         }
       }
       .description {
         padding-top: 20px;
         span {
-          font-size: 33px;
+          font-size: 30px;
           line-height: 36px;
           color: #696969;
           margin-top: 20px;

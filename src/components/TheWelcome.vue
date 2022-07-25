@@ -12,7 +12,7 @@
               We started “Computational Analysis Network on Biological Observation” CANOBO in mid 2022 to give
               researchers
               easy and powerful tools for analyzing biological datas. Our mission is to provide a work space for every
-              researchers to analyse their projects free and accessible.
+              researchers to analyse their projects free and accessible.
             </p>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <span data-aos="fade-right"
               data-aos-duration="3000"
               data-aos-delay="250">
-            Yor First Step into the Unknown…
+            Your First Step into the Unknown…
             </span>
       </div>
       <div class="svgSection2 position-absolute">
@@ -71,47 +71,16 @@
     </div>
 
     <div class="article-section d-lg-flex d-none flex-column flex-xl-row">
-      <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
+      <div v-for="(item,i) in articleSlider" :key="i" class="col-xl-4 px-2 px-xxl-2 col-lg-12">
         <div class="img">
-          <img :src="news2" alt="">
+          <img :src="item.image" alt="">
         </div>
         <div class="title">
-          <h2>Cell-sex specific proteins</h2>
-          <span class="date">2022.07.20</span>
+          <h2>{{ item.title }}</h2>
         </div>
         <div class="description">
           <p>
-            Could the proteins essential to sex-cell fusion predate... sex? Read the latest research by cdessimoz’ lab unil & international colleagues, published in NatureComms, initially spotted as a preprint in the SIBRemarkableOutput 2021! 
-          </p>
-        </div>
-        <div class="underline"></div>
-      </div>
-      <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
-        <div class="img">
-          <img :src="news1" alt="">
-        </div>
-        <div class="title">
-          <h2>7000 new ORFs! </h2>
-          <span class="date">2022.07.20</span>
-        </div>
-        <div class="description">
-          <p>
-            Despite years of research, there is still uncharted territory in the human genome that remains to be explored. New work identifies over 7,000 ORFs to add to all the major human genome databases.
-          </p>
-        </div>
-        <div class="underline"></div>
-      </div>
-      <div class="col-xl-4 px-2 px-xxl-2 col-lg-12">
-        <div class="img">
-          <img :src="news3" alt="">
-        </div>
-        <div class="title">
-          <h2>ncRNAs as biomarkers in cancer</h2>
-          <span class="date">2022.07.20</span>
-        </div>
-        <div class="description">
-          <p>
-            Non-coding RNAs are essential in the pathophysiology of several malignancies. Aside from their biological relevance, discovering that their expression levels are commonly dysregulated in various malignancies has sparked an interest.
+             {{item.description}}    
           </p>
         </div>
         <div class="underline"></div>
@@ -127,7 +96,6 @@
             </div>
             <div class="title">
               <h2>{{ item.title }}</h2>
-              <span class="date">{{ item.date }}</span>
             </div>
             <div class="description">
               <p>
@@ -254,11 +222,11 @@ export default {
   width: 100%;
   height: 1110px;
   background-color: black;
-  background-image: url("/assets/dots2.svg");
+  background-image: url("~@/assets/dots2.svg");
   transition: opacity 2s ease;
 
   .svgSection2 {
-    background-image: url("/assets/dots.svg");
+    background-image: url("~@/assets/dots.svg");
     transition: all 2s ease;
     width: 100%;
     height: 1110px;

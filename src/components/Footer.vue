@@ -8,23 +8,23 @@
         <div class="col-xl-3">
           <div class="sections justify-content-xl-center justify-content-start d-grid">
             <router-link to="/team">
-             <span>Team</span>
+              <span>Team</span>
             </router-link>
             <router-link to="/researches">
-            <span>Research</span>
+              <span>Research</span>
             </router-link>
             <router-link to="/services-and-tools">
-            <span>Services and Tools</span>
+              <span>Services and Tools</span>
             </router-link>
           </div>
         </div>
         <div class="col-xl-3">
           <div class="privacy ps-5 ps-xl-0 justify-content-xl-center justify-content-start d-grid">
             <router-link to="/contacts">
-            <span>Privacy Policy</span>
+              <span>Privacy Policy</span>
             </router-link>
             <router-link to="/contacts">
-            <span>Contact us</span>
+              <span>Contact us</span>
             </router-link>
           </div>
         </div>
@@ -33,10 +33,14 @@
             <span>Social Media</span>
             <div>
               <span class="me-4">
+             <a target="_blank" href="https://t.me/Canobo_org">
                 <img class="img-fluid" :src="Telegram" alt="Telegram"/>
+            </a>
               </span>
               <span>
+             <a target="_blank" href="https://twitter.com/CANOBO_">
                 <img class="img-fluid" :src="Twitter" alt="Twitter"/>
+              </a>
               </span>
             </div>
           </div>
@@ -67,10 +71,11 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  a{
+  a {
     text-decoration: unset !important;
     color: unset !important;
   }
+
   position: relative;
   background-color: black;
   padding-top: 55px;
@@ -89,10 +94,12 @@ export default {
     line-height: 44px;
     justify-content: center;
   }
-  .social{
+
+  .social {
     padding-left: 30px;
   }
-  .copyRight{
+
+  .copyRight {
     position: absolute;
     font-size: 24px;
     text-align: right;
@@ -102,25 +109,26 @@ export default {
     width: 100%;
     color: #BABABA;
   }
+
   @media screen and (max-width: 1200px) {
     padding-right: 65px;
     padding-top: 40px;
-    .sections{
+    .sections {
       justify-content: flex-start;
       padding-left: 28px;
       margin-top: 30px;
     }
-    .privacy{
+    .privacy {
       line-height: 39px;
       justify-content: flex-start;
       padding-left: 28px !important;
       padding-top: 40px;
     }
-    .social{
+    .social {
       padding-top: 40px;
       padding-bottom: 40px;
     }
-    .copyRight{
+    .copyRight {
       position: absolute;
       font-size: 18px;
       text-align: center;
@@ -130,5 +138,5 @@ export default {
       color: #BABABA;
     }
   }
-  }
+}
 </style>

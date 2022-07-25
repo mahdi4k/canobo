@@ -28,15 +28,21 @@
     <div class="details">
       <div class="pt-contact d-flex flex-column">
         <span>Email</span>
-        <span class="text-red">CONOBO@info.org </span>
+        <a target="_blank" href="mailto:info@canobo.org">
+        <span class="text-red">info@canobo.org </span>
+        </a>
       </div>
       <div class="pt-contact d-flex flex-column">
         <span>Youtube</span>
+        <a target="_blank" href="https://www.youtube.com/channel/UCkwGnMxKHYIvokfHAZi6iIg">
         <span class="text-red">CONOBO/YT.com </span>
+        </a>
       </div>
       <div class="pt-contact d-flex flex-column">
         <span>Twitter</span>
+        <a target="_blank" href="https://twitter.com/CANOBO_">
         <span class="text-red">@CONOBO</span>
+        </a>
       </div>
     </div>
   </div>

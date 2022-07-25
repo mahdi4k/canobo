@@ -1,17 +1,17 @@
 <template>
   <div class="container team-section">
-    <span class="mobile-title d-none">
-        Canobo Team
-      </span>
+    <span class="mobile-title d-none"> Canobo Team </span>
     <div class="team d-flex">
-      <div class="image"></div>
+      <div class="image">
+        <img :src="team" alt="" />
+      </div>
       <div class="details">
         <span class="name"> Arsham Mikaeili Namini </span>
         <span class="desc"> Institute Director </span>
-        <span class="fieldStudy"> Fields if Study: </span>
+        <span class="fieldStudy">Research Areas:</span>
         <p class="skills">
-          Bioinformatics, Cancer Biology, Algorithm Design, Image processing,
-          Reinforcement learning
+          Biomedical informatics, Computational Biology, Biomedical Data
+          Science, Machine Learning
         </p>
       </div>
       <div class="contact">
@@ -20,9 +20,15 @@
         <span> Std_arshammikaeili@khu.ac.ir </span>
       </div>
       <div class="icons d-flex flex-lg-column">
-        <img :src="awesomeTwitter" alt=""/>
-        <img :src="awesomeTelegram"/>
-        <img :src="awesomeGithub" alt=""/>
+        <a target="_blank" href="https://twitter.com/Arsham2000M">
+          <img :src="awesomeTwitter" alt="" />
+        </a>
+        <a href="https://t.me/Arshammikaeili">
+          <img :src="awesomeTelegram" />
+        </a>
+        <a href="https://github.com/Arshammik">
+          <img :src="awesomeGithub" alt="" />
+        </a>
       </div>
     </div>
 
@@ -30,22 +36,24 @@
       <div class="image"></div>
       <div class="details">
         <span class="name"> Motahareh Jahangir </span>
-        <span class="desc"> Institute Director </span>
-        <span class="fieldStudy"> Fields if Study: </span>
+        <span class="desc"> Institute Coordinator </span>
+        <span class="fieldStudy">Research Areas:</span>
         <p class="skills">
-          Bioinformatics, Cancer Biology, Algorithm Design, Image processing,
-          Reinforcement learning
+          C&M Biology, Bioinformatics, Neuroscience, Genomics and
+          Transcriptomics, Biomarkers
         </p>
       </div>
       <div class="contact">
         <span class="email"> Emails: </span>
-        <span> arshammikaeili@gmail.com </span>
-        <span> Std_arshammikaeili@khu.ac.ir </span>
+        <span> jahangir.motahareh@gmail.com </span>
+        <span> m.jahangir@mail.sbu.ac.ir </span>
       </div>
       <div class="icons d-flex flex-lg-column">
-        <img :src="awesomeTwitter" alt=""/>
-        <img :src="awesomeTelegram"/>
-        <img :src="awesomeGithub" alt=""/>
+        <img :src="awesomeTwitter" alt="" />
+        <a href="https://t.me/MotaharehJahangir">
+          <img :src="awesomeTelegram" />
+        </a>
+        <img :src="awesomeGithub" alt="" />
       </div>
     </div>
 
@@ -53,22 +61,20 @@
       <div class="image"></div>
       <div class="details">
         <span class="name"> Yasin Souezi </span>
-        <span class="desc"> Institute Director </span>
-        <span class="fieldStudy"> Fields if Study: </span>
+        <span class="desc"> Institute Coordinator </span>
+        <span class="fieldStudy">Research Areas:</span>
         <p class="skills">
-          Bioinformatics, Cancer Biology, Algorithm Design, Image processing,
-          Reinforcement learning
+          Computational Biology, Machine Learning
         </p>
       </div>
       <div class="contact">
         <span class="email"> Emails: </span>
-        <span> arshammikaeili@gmail.com </span>
-        <span> Std_arshammikaeili@khu.ac.ir </span>
+        <span> yasinsouezi@gmail.com </span>
       </div>
       <div class="icons d-flex flex-lg-column">
-        <img :src="awesomeTwitter" alt=""/>
-        <img :src="awesomeTelegram"/>
-        <img :src="awesomeGithub" alt=""/>
+        <img :src="awesomeTwitter" alt="" />
+        <img :src="awesomeTelegram" />
+        <img :src="awesomeGithub" alt="" />
       </div>
     </div>
   </div>
@@ -77,6 +83,7 @@
 import awesomeGithub from "@/assets/awesomeGithub.svg";
 import awesomeTwitter from "@/assets/awesomeTwitter.svg";
 import awesomeTelegram from "@/assets/awesomeTelegram.svg";
+import team from "@/assets/team.jpg";
 
 export default {
   name: "Team",
@@ -85,6 +92,7 @@ export default {
       awesomeGithub,
       awesomeTwitter,
       awesomeTelegram,
+      team,
     };
   },
 };
@@ -98,7 +106,7 @@ export default {
     margin-top: 0;
   }
 }
-.team-section{
+.team-section {
   padding-bottom: 100px;
 }
 .mobile-title {
@@ -108,7 +116,7 @@ export default {
     font-size: 46px;
     &:after {
       content: "";
-      border-bottom: 3px solid #E52620;
+      border-bottom: 3px solid #e52620;
       display: flex;
       width: 25%;
       position: absolute;
@@ -123,13 +131,25 @@ export default {
   background-color: #f8f8f8;
 
   .image {
-    width: 249px;
+    width: 283px;
     height: 212px;
+    img{
+      width: 100%;
+      height: 212px;
+    }
     background-color: white;
     @media (min-width: 1024px) {
       margin-right: 42px;
     }
-  }
+    @media screen and (min-width: 550px) and (max-width:946px) {
+      height: 612px !important;
+      img{
+        height: 612px !important;
+
+      }
+    }
+
+    }
 
   .details {
     margin-top: auto;
@@ -196,7 +216,7 @@ export default {
   @media (max-width: 950px) {
     flex-direction: column;
     margin: 40px 20px;
-    border: 1px solid #DDDDDD;
+    border: 1px solid #dddddd;
     padding: 20px 30px 0px 30px;
     .image {
       width: 100%;
@@ -248,7 +268,5 @@ export default {
       }
     }
   }
-
-
 }
 </style>
