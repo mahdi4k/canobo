@@ -536,6 +536,9 @@ pre{
   .tab-section{
     padding-top: 70px;
     padding-bottom: 70px;
+    @media (max-width: 1000px) {
+      padding-top: 12px;
+    }
   }
   .tab-content{
     width: 75%;
@@ -582,7 +585,9 @@ pre{
     padding-left: 70px;
     padding-bottom: 100px;
     margin-left: auto;
-
+    @media(max-width: 1000px){
+        padding-top: 30px;
+     }
     .small {
       font-size: 28px;
       line-height: 31px;
