@@ -481,13 +481,14 @@ export default {
     handleScroll(event) {
       let tab = document.querySelector(".nav-pills");
       let windowSize = window.innerWidth;
+      console.log(window.scrollY);
       if (window.scrollY > 200 && windowSize > 1000) {
         tab.classList.add('position-fix');
       }else {
         tab.classList.remove('position-fix');
 
       }
-      if (window.scrollY > 2000 && windowSize > 1000 && window.innerHeight < 910 ) {
+      if (window.scrollY > 1700 ) {
         tab.classList.add('position-change');
 
       }else{
@@ -549,6 +550,7 @@ pre{
 
   }
   .nav-pills {
+    bottom: auto;
     transition: all .4s;
     top: 5%;
     background-color: #EFEFEF;
@@ -675,7 +677,7 @@ pre{
 }
 .position-change{
   position: absolute;
-  bottom: 250px;
+  bottom: 250px !important;
   top: unset !important;
   transition: all .4s;
 }
