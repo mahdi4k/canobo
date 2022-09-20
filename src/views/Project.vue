@@ -8,8 +8,9 @@
         </div>
         <div class="author">Arsham Mikaeili Namini</div>
       </div>
-      <div class="d-flex flex-column tab-section flex-lg-row align-items-start">
-        <div class="nav flex-row flex-lg-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <div class="d-flex flex-column position-relative tab-section flex-lg-row align-items-start">
+      <div id="left-side">
+        <div class="nav flex-row flex-lg-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <span class="title d-none d-lg-block">Sections</span>
           <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
                   type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Study Design
@@ -30,6 +31,7 @@
                   type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">System Logs
           </button>
         </div>
+      </div>
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <div class="content">
@@ -464,7 +466,7 @@
 export default {
   data(){
     return{
-      code
+      
     }
   },
   name: "Project",
@@ -478,12 +480,19 @@ export default {
   methods: {
     handleScroll(event) {
       let tab = document.querySelector(".nav-pills");
-      let windowSize = window.innerWidth
-      if (window.scrollY > 200 && windowSize > 600) {
+      let windowSize = window.innerWidth;
+      console.log(window.scrollY);
+      if (window.scrollY > 200 && windowSize > 1000) {
         tab.classList.add('position-fix');
       }else {
         tab.classList.remove('position-fix');
 
+      }
+      if (window.scrollY > 2000 && windowSize > 1000 && window.innerHeight < 910 ) {
+        tab.classList.add('position-change');
+
+      }else{
+        tab.classList.remove('position-change');
       }
     },
   }
@@ -532,9 +541,17 @@ pre{
   .tab-content{
     width: 75%;
     margin-left: auto;
+    @media   (max-width: 1290px) and (min-width: 1000px)  {
+      width: 67%;
+    }
+
   }
   .nav-pills {
+    transition: all .4s;
     top: 5%;
+    background-color: #EFEFEF;
+    width: 350px;
+    padding: 20px;
     .title {
       font-size: 39px;
       line-height: 42px;
@@ -542,10 +559,6 @@ pre{
       padding-top: 18px;
       padding-bottom: 50px;
     }
-
-    background-color: #EFEFEF;
-    width: 350px;
-    padding: 20px;
 
     .nav-link {
       color: black;
@@ -606,10 +619,9 @@ pre{
       .nav-pills {
         background-color: #ffffff;
         width: 100%;
-        padding: 15px 20px 0 20px;
+        padding: 15px 20px 15px 20px;
         border: 1px solid #D5D5D5;
         flex-wrap: nowrap;
-        white-space: nowrap;
         overflow: auto;
         &::-webkit-scrollbar {
           width: 0;
@@ -640,5 +652,27 @@ pre{
       }
     }
   }
+    @media (max-width: 728px) {
+      .tab-section{
+      .nav-pills {
+        padding: 15px 20px 0px 20px;
+        white-space: nowrap;
+
+      }
+    }
+    }
+}
+#left-side{
+  width: 405px;
+  display: flex;
+  @media (max-width: 1000px){
+    width: 100%;
+  }
+}
+.position-change{
+  position: absolute;
+  bottom: 250px;
+  top: unset !important;
+  transition: all .4s;
 }
 </style>
