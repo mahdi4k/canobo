@@ -54,9 +54,10 @@
 
       </div>
       <div class="col-section">
-        <div class="header">
+        <a href="https://express-a.canobo.org/">
+          <div class="header">
           <img :src="simpleMicrogenetics2" alt=""/>
-          <span>DNA and RNA Translator</span>
+          <span>GEO-A</span>
         </div>
         <div class="description">
             <span>A modified platform to analyze the microarray expression data from GEO database in a
@@ -64,9 +65,10 @@
               and lastly Enrich analyzes based on DEGs results. This package will be online in mid 2023.</span
             >
         </div>
+        </a>
         <div class="status-section">
           <span class="title"> Status </span>
-          <span class="status"> Coming soon </span>
+          <span class="status-available"> Available </span>
         </div>
       </div>
     </div>
@@ -161,6 +163,10 @@ export default {
           color: #0DA8A8;
           font-size: 33px;
         }
+        .status-available {
+          color: #13A80D;
+          font-size: 33px;
+        }
 
         .status-red {
           color: #0DA8A8;
@@ -186,6 +192,7 @@ export default {
           font-size: 35px;
           line-height: 45px;
           margin-left: 25px;
+          color: black;
         }
       }
       .description {
@@ -209,13 +216,19 @@ export default {
           color: #0DA8A8;
           font-size: 33px;
         }
-
+        .status-available {
+          color: #13A80D;
+          font-size: 33px;
+        }
         .status-red {
           color: #A80D0D;
           font-size: 33px;
         }
       }
     }
+  }
+  a{
+    text-decoration: unset ;
   }
 }
 </style>
