@@ -481,7 +481,6 @@ export default {
     handleScroll(event) {
       let tab = document.querySelector(".nav-pills");
       let windowSize = window.innerWidth;
-      console.log(window.scrollY);
       if (window.scrollY > 200 && windowSize > 1000) {
         tab.classList.add('position-fix');
       }else {
